@@ -1,0 +1,26 @@
+---
+# tasks file for deployer
+- name: Check if Deployer installed.
+  stat: "path={{ deployer_path }}"
+  register: deployer_bin
+
+- name: Download Deployer installer.
+  get_url:
+    url: "http://deployer.org/releases/{{ deployer_version }}/deployer.phar"
+    dest: "/tmp/deployer-{{ deployer_version}}.phar"
+    mode: 0755
+  when: not deployer_bin.stat.exist or deployer_force_upgrade
+
+- name: Move Deployer into globally-accessible path.
+  shell: >
+    mv /tmp/deployer-{{ deployer-version }}.phar {{ deployer_path }}
+    creates={{ deployer_path }}
+
+- name: Upgrade Deployer to latest version (if configured).
+  shell: >
+    {{ deployer_path }} self-update
+  when: deployer_keep_upgrade
+
+- name: Ensure Deployer is installed
+  shell: >
+    {{ deployer_path }} --version

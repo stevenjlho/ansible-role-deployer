@@ -1,0 +1,26 @@
+### OSX ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Thumbnails
+._*
+
+### Ansible ###
+*.retry
+
+### Vim ###
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+# session
+Session.vim
+# temporary
+.netrwhist
+*~
+
+### JetBrains ###
+.idea
+
+
