@@ -21,7 +21,3 @@
   shell: >
     {{ deployer_path }} self-update
   when: deployer_keep_upgrade
-
-- name: Ensure Deployer is installed
-  shell: >
-    {{ deployer_path }} --version
