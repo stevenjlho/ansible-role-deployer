@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/stevenjlho/ansible-role-deployer.svg?branch=master)](https://travis-ci.org/stevenjlho/ansible-role-deployer)
 
 Ansible role Deployer
 =========
