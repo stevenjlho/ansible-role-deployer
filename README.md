@@ -50,7 +50,7 @@ Example Playbook
     - hosts: localhost
       remote_user: root
       roles:
-        - deployer
+        - stevenjlho.deployer
 
 
 License
