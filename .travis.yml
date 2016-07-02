@@ -10,6 +10,9 @@ addons:
     packages:
     - python-pip
 
+before_install:
+  - sudo add-apt-repository -y ppa:ondrej/php
+  - sudo apt-get update
 
 install:
   # Install ansible
