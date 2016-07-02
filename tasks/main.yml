@@ -6,14 +6,15 @@
 
 - name: Download Deployer installer.
   get_url:
-    url: "http://deployer.org/releases/{{ deployer_version }}/deployer.phar"
+    url: "http://deployer.org/releases/v{{ deployer_version }}/deployer.phar"
     dest: "/tmp/deployer-{{ deployer_version}}.phar"
     mode: 0755
-  when: not deployer_bin.stat.exist or deployer_force_upgrade
+  when: (not deployer_bin.stat.exists) or deployer_force_upgrade
+
 
 - name: Move Deployer into globally-accessible path.
   shell: >
-    mv /tmp/deployer-{{ deployer-version }}.phar {{ deployer_path }}
+    mv /tmp/deployer-{{ deployer_version }}.phar {{ deployer_path }}
     creates={{ deployer_path }}
 
 - name: Upgrade Deployer to latest version (if configured).

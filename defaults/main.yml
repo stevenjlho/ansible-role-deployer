@@ -2,3 +2,4 @@
 deployer_version: "3.3.0"
 deployer_path: "/usr/local/bin/dep"
 deployer_keep_upgrade: false
+deployer_force_upgrade: false
