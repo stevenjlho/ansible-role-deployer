@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/stevenjlho/ansible-role-deployer.svg?branch=master)](https://travis-ci.org/stevenjlho/ansible-role-deployer)
 
+
 Ansible role Deployer
 =========
 
@@ -42,14 +43,14 @@ If Deploy already install an old version, set this to `true` to force upgrade De
 Dependencies
 ------------
 
-none
-
+geerlingguy.php
 
 Example Playbook
 ----------------
 
     - hosts: localhost
-      remote_user: root
+      vars:
+        deployer_keep_upgrade: true
       roles:
         - stevenjlho.deployer
 

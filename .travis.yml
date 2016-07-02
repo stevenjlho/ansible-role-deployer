@@ -2,8 +2,7 @@
 language: python
 python: "2.7"
 
-# Use the new container infrastructure
-sudo: false
+sudo: required
 
 # Install ansible
 addons:
@@ -21,6 +20,8 @@ install:
 
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' >ansible.cfg
+  
+  - ansible-galaxy install geerlingguy.php -p ../
 
 script:
   # Basic role syntax check
