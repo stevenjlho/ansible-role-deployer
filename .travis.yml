@@ -28,6 +28,7 @@ install:
   - ansible-galaxy install geerlingguy.php -p ../
   - ansible-galaxy install geerlingguy.apache -p ../
 
+
 script:
   # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
