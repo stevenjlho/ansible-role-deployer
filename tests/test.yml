@@ -3,5 +3,6 @@
   vars:
     deployer_keep_upgrade: true 
   roles:
+    - geerlingguy.apache
     - geerlingguy.php
     - ansible-role-deployer

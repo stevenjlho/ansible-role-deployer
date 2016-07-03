@@ -23,8 +23,10 @@ install:
 
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' >ansible.cfg
-  
+ 
+  # Install Deployer dependence 
   - ansible-galaxy install geerlingguy.php -p ../
+  - ansible-galaxy install geerlingguy.apache -p ../
 
 script:
   # Basic role syntax check
